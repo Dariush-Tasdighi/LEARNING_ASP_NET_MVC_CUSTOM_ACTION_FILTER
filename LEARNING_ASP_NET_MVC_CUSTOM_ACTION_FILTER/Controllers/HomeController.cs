@@ -17,5 +17,18 @@
 		{
 			return (View());
 		}
+
+		/// <summary>
+		/// Step (4)
+		/// </summary>
+		[Infrastructure.Log]
+		//[Infrastructure.Log()]
+		//[Infrastructure.LogAttribute]
+		//[Infrastructure.LogAttribute()]
+		[System.Web.Mvc.HttpGet]
+		public System.Web.Mvc.ViewResult SomeAction()
+		{
+			return (View());
+		}
 	}
 }

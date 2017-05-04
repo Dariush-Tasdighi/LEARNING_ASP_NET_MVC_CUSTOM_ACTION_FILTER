@@ -6,7 +6,7 @@
 	public class LogAttribute : System.Web.Mvc.ActionFilterAttribute
 	{
 		/// <summary>
-		/// Step (2)
+		/// Step (4)
 		/// </summary>
 		public LogAttribute()
 		{
@@ -19,7 +19,7 @@
 		//}
 
 		/// <summary>
-		/// Step (3) = گلوگاه
+		/// Step (6) = گلوگاه
 		/// </summary>
 		public override void OnActionExecuting
 			(System.Web.Mvc.ActionExecutingContext filterContext)
@@ -43,7 +43,7 @@
 		}
 
 		/// <summary>
-		/// Step (5)
+		/// Step (8)
 		/// </summary>
 		public override void OnActionExecuted
 			(System.Web.Mvc.ActionExecutedContext filterContext)
@@ -55,7 +55,7 @@
 		}
 
 		/// <summary>
-		/// Step (6)
+		/// Step (9)
 		/// </summary>
 		public override void OnResultExecuting
 			(System.Web.Mvc.ResultExecutingContext filterContext)
@@ -64,7 +64,7 @@
 		}
 
 		/// <summary>
-		/// Step (8)
+		/// Step (11)
 		/// </summary>
 		public override void OnResultExecuted
 			(System.Web.Mvc.ResultExecutedContext filterContext)
@@ -73,7 +73,7 @@
 		}
 
 		/// <summary>
-		/// Step (9)
+		/// Step (12)
 		/// </summary>
 		/// ارسال داده به سمت کلاينت
 	}

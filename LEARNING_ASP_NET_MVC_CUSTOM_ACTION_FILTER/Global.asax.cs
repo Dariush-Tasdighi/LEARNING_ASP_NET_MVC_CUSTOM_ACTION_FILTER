@@ -6,10 +6,14 @@
 		{
 		}
 
+		/// <summary>
+		/// Step (1)
+		/// </summary>
 		protected void Application_Start()
 		{
 			System.Web.Mvc.AreaRegistration.RegisterAllAreas();
 
+			FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(System.Web.Routing.RouteTable.Routes);
 		}
 	}

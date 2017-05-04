@@ -1,5 +1,6 @@
 ﻿namespace LEARNING_ASP_NET_MVC_CUSTOM_ACTION_FILTER.Controllers
 {
+	[Infrastructure.Log]
 	public class HomeController : System.Web.Mvc.Controller
 	{
 		/// <summary>
@@ -10,7 +11,7 @@
 		}
 
 		/// <summary>
-		/// Step (2)
+		/// Step (4)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult Index()
@@ -21,10 +22,6 @@
 		/// <summary>
 		/// Step (4)
 		/// </summary>
-		[Infrastructure.Log]
-		//[Infrastructure.Log()]
-		//[Infrastructure.LogAttribute]
-		//[Infrastructure.LogAttribute()]
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult SomeAction()
 		{

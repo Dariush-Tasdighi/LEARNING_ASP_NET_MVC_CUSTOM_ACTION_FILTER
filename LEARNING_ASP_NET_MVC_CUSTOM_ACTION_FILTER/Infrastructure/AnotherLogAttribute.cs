@@ -1,19 +1,16 @@
 ﻿namespace Infrastructure
 {
-	/// <summary>
-	/// Middleware
-	/// </summary>
-	public class LogAttribute : System.Web.Mvc.ActionFilterAttribute
+	public class AnotherLogAttribute : System.Web.Mvc.ActionFilterAttribute
 	{
 		/// <summary>
-		/// Step (4)
+		/// Step (5)
 		/// </summary>
-		public LogAttribute() : base()
+		public AnotherLogAttribute() : base()
 		{
 		}
 
 		/// <summary>
-		/// Step (7) = گلوگاه
+		/// Step (8)
 		/// </summary>
 		public override void OnActionExecuting
 			(System.Web.Mvc.ActionExecutingContext filterContext)
@@ -36,7 +33,7 @@
 		}
 
 		/// <summary>
-		/// Step (11)
+		/// Step (10)
 		/// </summary>
 		public override void OnActionExecuted
 			(System.Web.Mvc.ActionExecutedContext filterContext)
@@ -45,7 +42,7 @@
 		}
 
 		/// <summary>
-		/// Step (12)
+		/// Step (13)
 		/// </summary>
 		public override void OnResultExecuting
 			(System.Web.Mvc.ResultExecutingContext filterContext)
@@ -54,17 +51,12 @@
 		}
 
 		/// <summary>
-		/// Step (16)
+		/// Step (15)
 		/// </summary>
 		public override void OnResultExecuted
 			(System.Web.Mvc.ResultExecutedContext filterContext)
 		{
 			base.OnResultExecuted(filterContext);
 		}
-
-		/// <summary>
-		/// Step (17)
-		/// </summary>
-		/// ارسال داده به سمت کلاينت
 	}
 }

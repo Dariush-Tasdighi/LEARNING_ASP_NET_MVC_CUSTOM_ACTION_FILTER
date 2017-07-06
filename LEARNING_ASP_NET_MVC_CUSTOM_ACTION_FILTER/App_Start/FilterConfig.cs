@@ -15,17 +15,9 @@
 		public static void RegisterGlobalFilters
 			(System.Web.Mvc.GlobalFilterCollection filters)
 		{
+			// قانون دور در دور نزدیک در نزدیک
 			filters.Add(new Infrastructure.LogAttribute());
-
-			// **************************************************
-			//string strLogEnabled =
-			//	System.Configuration.ConfigurationManager.AppSettings["LogEnabled"];
-
-			//if (strLogEnabled == "1")
-			//{
-			//	filters.Add(new Infrastructure.LogAttribute());
-			//}
-			// **************************************************
+			filters.Add(new Infrastructure.AnotherLogAttribute());
 
 			filters.Add(new System.Web.Mvc.HandleErrorAttribute());
 		}

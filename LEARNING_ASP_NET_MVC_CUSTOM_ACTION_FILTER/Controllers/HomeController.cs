@@ -3,14 +3,14 @@
 	public class HomeController : System.Web.Mvc.Controller
 	{
 		/// <summary>
-		/// Step (5)
+		/// Step (6)
 		/// </summary>
 		public HomeController() : base()
 		{
 		}
 
 		/// <summary>
-		/// Step (7)
+		/// Step (9)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult Index()
@@ -19,7 +19,7 @@
 		}
 
 		/// <summary>
-		/// Step (7)
+		/// Step (9)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult SomeAction()

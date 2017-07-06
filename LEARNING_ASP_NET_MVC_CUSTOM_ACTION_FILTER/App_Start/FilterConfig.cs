@@ -17,16 +17,6 @@
 		{
 			filters.Add(new Infrastructure.LogAttribute());
 
-			// **************************************************
-			//string strLogEnabled =
-			//	System.Configuration.ConfigurationManager.AppSettings["LogEnabled"];
-
-			//if (strLogEnabled == "1")
-			//{
-			//	filters.Add(new Infrastructure.LogAttribute());
-			//}
-			// **************************************************
-
 			filters.Add(new System.Web.Mvc.HandleErrorAttribute());
 		}
 	}

@@ -8,15 +8,12 @@
 		/// <summary>
 		/// Step (4)
 		/// </summary>
-		public LogAttribute() : base()
+		public LogAttribute(bool ignore = false) : base()
 		{
+			Ignore = ignore;
 		}
 
-		//public override void OnActionExecuting
-		//	(System.Web.Mvc.ActionExecutingContext filterContext)
-		//{
-		//	base.OnActionExecuting(filterContext);
-		//}
+		public bool Ignore { get; set; }
 
 		/// <summary>
 		/// Step (6) = گلوگاه
@@ -24,20 +21,23 @@
 		public override void OnActionExecuting
 			(System.Web.Mvc.ActionExecutingContext filterContext)
 		{
-			base.OnActionExecuting(filterContext);
-
-			string strActionName =
-				filterContext.ActionDescriptor.ActionName;
-
-			string strControllerName =
-				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
-
-			string strAreaName = null;
-
-			if (filterContext.RouteData.DataTokens["area"] != null)
+			if (Ignore == false)
 			{
-				strAreaName =
-					filterContext.RouteData.DataTokens["area"].ToString();
+				base.OnActionExecuting(filterContext);
+
+				string strActionName =
+					filterContext.ActionDescriptor.ActionName;
+
+				string strControllerName =
+					filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
+
+				string strAreaName = null;
+
+				if (filterContext.RouteData.DataTokens["area"] != null)
+				{
+					strAreaName =
+						filterContext.RouteData.DataTokens["area"].ToString();
+				}
 			}
 		}
 

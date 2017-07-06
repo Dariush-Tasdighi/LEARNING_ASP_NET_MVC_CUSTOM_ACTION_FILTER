@@ -22,7 +22,13 @@
 		/// Step (7)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
-		public System.Web.Mvc.ViewResult SomeAction()
+		public System.Web.Mvc.ViewResult SomeSecuredAction()
+		{
+			return (View());
+		}
+
+		[System.Web.Mvc.HttpGet]
+		public System.Web.Mvc.ViewResult AccessDenied()
 		{
 			return (View());
 		}

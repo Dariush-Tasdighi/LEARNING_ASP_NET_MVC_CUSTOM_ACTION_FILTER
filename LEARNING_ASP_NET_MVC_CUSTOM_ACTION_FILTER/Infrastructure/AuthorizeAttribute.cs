@@ -3,20 +3,14 @@
 	/// <summary>
 	/// Middleware
 	/// </summary>
-	public class LogAttribute : System.Web.Mvc.ActionFilterAttribute
+	public class AuthorizeAttribute : System.Web.Mvc.ActionFilterAttribute
 	{
 		/// <summary>
 		/// Step (4)
 		/// </summary>
-		public LogAttribute() : base()
+		public AuthorizeAttribute() : base()
 		{
 		}
-
-		//public override void OnActionExecuting
-		//	(System.Web.Mvc.ActionExecutingContext filterContext)
-		//{
-		//	base.OnActionExecuting(filterContext);
-		//}
 
 		/// <summary>
 		/// Step (6) = گلوگاه
@@ -38,6 +32,19 @@
 			{
 				strAreaName =
 					filterContext.RouteData.DataTokens["area"].ToString();
+			}
+
+			if ((string.Compare(strControllerName, "Home", ignoreCase: true) == 0) &&
+				(string.Compare(strActionName, "SomeSecuredAction", ignoreCase: true) == 0))
+			{
+				filterContext.Result =
+					new System.Web.Mvc.RedirectToRouteResult(
+					new System.Web.Routing.RouteValueDictionary
+					{
+						{ "area", string.Empty },
+						{ "controller", "Home" },
+						{ "action", "AccessDenied" }
+					});
 			}
 		}
 

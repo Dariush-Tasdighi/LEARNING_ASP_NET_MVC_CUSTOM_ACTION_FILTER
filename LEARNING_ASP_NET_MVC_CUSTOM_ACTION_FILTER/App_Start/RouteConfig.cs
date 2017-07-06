@@ -2,8 +2,12 @@
 
 namespace LEARNING_ASP_NET_MVC_CUSTOM_ACTION_FILTER
 {
-	public class RouteConfig
+	public static class RouteConfig
 	{
+		static RouteConfig()
+		{
+		}
+
 		public static void RegisterRoutes(System.Web.Routing.RouteCollection routes)
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");

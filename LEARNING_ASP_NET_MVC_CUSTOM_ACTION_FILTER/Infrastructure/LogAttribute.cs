@@ -8,7 +8,7 @@
 		/// <summary>
 		/// Step (4)
 		/// </summary>
-		public LogAttribute()
+		public LogAttribute() : base()
 		{
 		}
 
@@ -26,20 +26,19 @@
 		{
 			base.OnActionExecuting(filterContext);
 
-			//object objAction =
-			//	filterContext.RouteData.Values["action"];
-
-			//object objController =
-			//	filterContext.RouteData.Values["controller"];
-
 			string strActionName =
 				filterContext.ActionDescriptor.ActionName;
 
 			string strControllerName =
 				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-			System.Guid sId = System.Guid.NewGuid();
-			filterContext.HttpContext.Items["__unique_id_value__"] = sId;
+			string strAreaName = null;
+
+			if (filterContext.RouteData.DataTokens["area"] != null)
+			{
+				strAreaName =
+					filterContext.RouteData.DataTokens["area"].ToString();
+			}
 		}
 
 		/// <summary>
@@ -49,9 +48,6 @@
 			(System.Web.Mvc.ActionExecutedContext filterContext)
 		{
 			base.OnActionExecuted(filterContext);
-
-			System.Guid sId =
-				(System.Guid)filterContext.HttpContext.Items["__unique_id_value__"];
 		}
 
 		/// <summary>

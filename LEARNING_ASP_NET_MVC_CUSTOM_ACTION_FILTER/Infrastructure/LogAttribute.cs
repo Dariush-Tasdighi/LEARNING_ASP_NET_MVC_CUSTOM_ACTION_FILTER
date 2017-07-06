@@ -8,7 +8,7 @@
 		/// <summary>
 		/// Step (2)
 		/// </summary>
-		public LogAttribute()
+		public LogAttribute() : base()
 		{
 		}
 

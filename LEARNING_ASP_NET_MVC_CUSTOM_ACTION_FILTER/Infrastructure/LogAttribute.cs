@@ -5,6 +5,10 @@
 	/// </summary>
 	public class LogAttribute : System.Web.Mvc.ActionFilterAttribute
 	{
+		//public LogAttribute() : base()
+		//{
+		//}
+
 		/// <summary>
 		/// Step (4)
 		/// </summary>

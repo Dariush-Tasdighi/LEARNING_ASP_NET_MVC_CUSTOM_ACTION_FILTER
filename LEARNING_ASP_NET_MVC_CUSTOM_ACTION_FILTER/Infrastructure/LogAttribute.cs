@@ -25,23 +25,25 @@
 		public override void OnActionExecuting
 			(System.Web.Mvc.ActionExecutingContext filterContext)
 		{
-			if (Ignore == false)
+			if (Ignore)
 			{
-				base.OnActionExecuting(filterContext);
+				return;
+			}
 
-				string strActionName =
-					filterContext.ActionDescriptor.ActionName;
+			base.OnActionExecuting(filterContext);
 
-				string strControllerName =
-					filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
+			string strActionName =
+				filterContext.ActionDescriptor.ActionName;
 
-				string strAreaName = null;
+			string strControllerName =
+				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-				if (filterContext.RouteData.DataTokens["area"] != null)
-				{
-					strAreaName =
-						filterContext.RouteData.DataTokens["area"].ToString();
-				}
+			string strAreaName = null;
+
+			if (filterContext.RouteData.DataTokens["area"] != null)
+			{
+				strAreaName =
+					filterContext.RouteData.DataTokens["area"].ToString();
 			}
 		}
 
@@ -51,6 +53,11 @@
 		public override void OnActionExecuted
 			(System.Web.Mvc.ActionExecutedContext filterContext)
 		{
+			if (Ignore)
+			{
+				return;
+			}
+
 			base.OnActionExecuted(filterContext);
 		}
 
@@ -60,6 +67,11 @@
 		public override void OnResultExecuting
 			(System.Web.Mvc.ResultExecutingContext filterContext)
 		{
+			if (Ignore)
+			{
+				return;
+			}
+
 			base.OnResultExecuting(filterContext);
 		}
 
@@ -69,6 +81,11 @@
 		public override void OnResultExecuted
 			(System.Web.Mvc.ResultExecutedContext filterContext)
 		{
+			if (Ignore)
+			{
+				return;
+			}
+
 			base.OnResultExecuted(filterContext);
 		}
 

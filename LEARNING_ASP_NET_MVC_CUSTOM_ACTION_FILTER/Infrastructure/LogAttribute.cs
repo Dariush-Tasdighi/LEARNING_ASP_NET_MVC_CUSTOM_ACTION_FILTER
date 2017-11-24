@@ -12,12 +12,6 @@
 		{
 		}
 
-		//public override void OnActionExecuting
-		//	(System.Web.Mvc.ActionExecutingContext filterContext)
-		//{
-		//	base.OnActionExecuting(filterContext);
-		//}
-
 		/// <summary>
 		/// Step (3) = گلوگاه
 		/// </summary>
@@ -26,22 +20,22 @@
 		{
 			base.OnActionExecuting(filterContext);
 
-			string strActionName =
+			string actionName =
 				filterContext.ActionDescriptor.ActionName;
 
-			string strControllerName =
+			string controllerName =
 				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-			string strAreaName = null;
+			string areaName = null;
 
 			if (filterContext.RouteData.DataTokens["area"] != null)
 			{
-				strAreaName =
+				areaName =
 					filterContext.RouteData.DataTokens["area"].ToString();
 			}
 
-			System.Guid sId = System.Guid.NewGuid();
-			filterContext.HttpContext.Items["__unique_id_value__"] = sId;
+			System.Guid id = System.Guid.NewGuid();
+			filterContext.HttpContext.Items["__unique_id_value__"] = id;
 		}
 
 		/// <summary>
@@ -52,7 +46,7 @@
 		{
 			base.OnActionExecuted(filterContext);
 
-			System.Guid sId =
+			System.Guid id =
 				(System.Guid)filterContext.HttpContext.Items["__unique_id_value__"];
 		}
 

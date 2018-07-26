@@ -16,6 +16,7 @@
 			(System.Web.Mvc.GlobalFilterCollection filters)
 		{
 			filters.Add(new Infrastructure.LogAttribute());
+			//filters.Add(new Infrastructure.LogAttribute(ignore: false));
 
 			filters.Add(new System.Web.Mvc.HandleErrorAttribute());
 		}

@@ -20,22 +20,22 @@
 		{
 			base.OnActionExecuting(filterContext);
 
-			string strActionName =
+			string actionName =
 				filterContext.ActionDescriptor.ActionName;
 
-			string strControllerName =
+			string controllerName =
 				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-			string strAreaName = null;
+			string areaName = null;
 
 			if (filterContext.RouteData.DataTokens["area"] != null)
 			{
-				strAreaName =
+				areaName =
 					filterContext.RouteData.DataTokens["area"].ToString();
 			}
 
-			if ((string.Compare(strControllerName, "Home", ignoreCase: true) == 0) &&
-				(string.Compare(strActionName, "SomeSecuredAction", ignoreCase: true) == 0))
+			if ((string.Compare(controllerName, "Home", ignoreCase: true) == 0) &&
+				(string.Compare(actionName, "SomeSecuredAction", ignoreCase: true) == 0))
 			{
 				filterContext.Result =
 					new System.Web.Mvc.RedirectToRouteResult(

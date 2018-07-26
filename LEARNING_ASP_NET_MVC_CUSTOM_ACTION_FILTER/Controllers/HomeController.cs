@@ -13,6 +13,7 @@
 		/// Step (2)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
+		//[System.Web.Mvc.HttpGetAttribute]
 		public System.Web.Mvc.ViewResult Index()
 		{
 			return (View());

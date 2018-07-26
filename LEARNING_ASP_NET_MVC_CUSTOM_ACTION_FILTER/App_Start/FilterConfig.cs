@@ -15,13 +15,15 @@
 		public static void RegisterGlobalFilters
 			(System.Web.Mvc.GlobalFilterCollection filters)
 		{
+			// **************************************************
 			filters.Add(new Infrastructure.LogAttribute());
+			// **************************************************
 
 			// **************************************************
-			//string strLogEnabled =
+			//string logEnabled =
 			//	System.Configuration.ConfigurationManager.AppSettings["LogEnabled"];
 
-			//if (strLogEnabled == "1")
+			//if (logEnabled == "1")
 			//{
 			//	filters.Add(new Infrastructure.LogAttribute());
 			//}

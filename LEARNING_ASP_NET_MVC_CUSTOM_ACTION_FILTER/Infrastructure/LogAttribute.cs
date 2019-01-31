@@ -12,12 +12,6 @@
 		{
 		}
 
-		//public override void OnActionExecuting
-		//	(System.Web.Mvc.ActionExecutingContext filterContext)
-		//{
-		//	base.OnActionExecuting(filterContext);
-		//}
-
 		/// <summary>
 		/// Step (6) = گلوگاه
 		/// </summary>
@@ -26,17 +20,17 @@
 		{
 			base.OnActionExecuting(filterContext);
 
-			string strActionName =
+			string actionName =
 				filterContext.ActionDescriptor.ActionName;
 
-			string strControllerName =
+			string controllerName =
 				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-			string strAreaName = null;
+			string areaName = null;
 
 			if (filterContext.RouteData.DataTokens["area"] != null)
 			{
-				strAreaName =
+				areaName =
 					filterContext.RouteData.DataTokens["area"].ToString();
 			}
 		}

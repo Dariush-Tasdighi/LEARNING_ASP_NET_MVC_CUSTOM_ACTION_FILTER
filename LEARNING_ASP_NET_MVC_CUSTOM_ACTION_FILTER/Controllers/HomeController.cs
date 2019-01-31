@@ -16,7 +16,7 @@
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult Index()
 		{
-			return (View());
+			return View();
 		}
 
 		/// <summary>
@@ -26,7 +26,7 @@
 		[Infrastructure.Log(Ignore = true)]
 		public System.Web.Mvc.ViewResult SomeAction()
 		{
-			return (View());
+			return View();
 		}
 	}
 }

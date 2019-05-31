@@ -15,22 +15,23 @@
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult Index()
 		{
-			return (View());
+			return View();
 		}
 
 		/// <summary>
 		/// Step (7)
 		/// </summary>
 		[System.Web.Mvc.HttpGet]
+		//[System.Web.Mvc.Authorize]
 		public System.Web.Mvc.ViewResult SomeSecuredAction()
 		{
-			return (View());
+			return View();
 		}
 
 		[System.Web.Mvc.HttpGet]
 		public System.Web.Mvc.ViewResult AccessDenied()
 		{
-			return (View());
+			return View();
 		}
 	}
 }

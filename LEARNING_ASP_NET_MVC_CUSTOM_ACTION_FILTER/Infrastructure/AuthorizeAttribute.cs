@@ -26,7 +26,7 @@
 			string controllerName =
 				filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
 
-			string areaName = null;
+			string areaName = string.Empty;
 
 			if (filterContext.RouteData.DataTokens["area"] != null)
 			{
